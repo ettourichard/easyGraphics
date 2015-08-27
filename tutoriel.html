@@ -1,0 +1,84 @@
+<DOCTYPE html>
+
+<canvas id="graphic_canvas" width="350" height="350">
+	Ce navigateur ne supporte pas Canvas
+</canvas>
+
+<script type="text/javascript">
+	var c = document.getElementById("graphic_canvas");
+	var ctx = c.getContext("2d");
+
+	/*ctx.beginPath();
+	ctx.fillStyle = "lightgrey";
+    ctx.fillRect(50, 50, 250, 150);
+    // Px, Py, hauteur, largeur
+
+    ctx.moveTo(20,20);
+	ctx.lineTo(300, 200);
+	ctx.lineTo(100, 300);
+	ctx.fillStyle = "lightblue";
+	ctx.lineWidth=20;
+	
+	ctx.lineCap = 'round';
+	ctx.lineJoin = "round";
+
+	ctx.stroke();*/
+
+
+	ctx.closePath();
+
+	/*ctx.beginPath();
+	ctx.arc(150,200,100,0,(Math.PI*2),true);
+	ctx.lineWidth = 30;
+	//ctx.lineJoin = "square";
+	ctx.strokeStyle = "grey";
+	ctx.stroke();
+	ctx.closePath();*/
+	
+	ctx.lineWidth = 20;
+
+
+	ctx.beginPath();
+	ctx.arc(150, 200, 100, getAngleWithPercent(0), getAngleWithPercent(60) , false);
+	ctx.strokeStyle="orange";
+	//ctx.lineCap = "butt"
+	ctx.stroke();
+	ctx.closePath();
+
+	ctx.beginPath();
+	ctx.arc(150, 200, 100, getAngleWithPercent(60), getAngleWithPercent(85) , false);
+	ctx.strokeStyle="lightgreen";
+	//ctx.lineCap = "butt"
+	ctx.stroke();
+	ctx.closePath();
+
+	/*ctx.beginPath();
+	ctx.arc(150, 200, 100, getAngleWithPercent(85), getAngleWithPercent(100) , false);
+	ctx.strokeStyle="lightblue";
+	ctx.lineCap = "butt"
+	ctx.stroke();
+	ctx.closePath();*/
+
+	ctx.beginPath();
+	ctx.fillStyle = "orange";
+    ctx.fillRect(10,10, 20, 10);
+    ctx.closePath();
+
+    ctx.beginPath();
+	ctx.fillStyle = "lightgreen";
+    ctx.fillRect(10,30, 20, 10);
+    ctx.closePath();
+
+    ctx.beginPath();
+	ctx.fillStyle = "lightblue";
+    ctx.fillRect(10, 50, 20, 10);
+    ctx.closePath();
+
+//ctx.fill();
+
+	function getAngleWithPercent(percent){
+		return (Math.PI/180*(360*percent/100))-(Math.PI/2);
+	}
+
+
+</script>
